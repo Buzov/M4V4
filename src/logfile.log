@@ -1,0 +1,20 @@
+2015-03-04 00:45:54 INFO  MatrixMultiplay:43 - Multiplication of matrixes lasted 1 ms.
+2015-03-04 14:27:49 INFO  MatrixMultiplay:43 - Multiplication of matrixes lasted 0 ms.
+2015-03-04 14:28:29 INFO  MatrixMultiplay:43 - Multiplication of matrixes lasted 0 ms.
+2015-03-04 14:38:17 INFO  MatrixMultiplay:43 - Multiplication of matrixes lasted 1 ms.
+2015-03-04 14:43:36 INFO  MatrixMultiplay:43 - Multiplication of matrixes lasted 1 ms.
+2015-03-04 14:44:17 INFO  MatrixMultiplay:43 - Multiplication of matrixes lasted 1 ms.
+2015-03-05 00:10:46 INFO  MatrixMultiplay:43 - Multiplication of matrixes lasted 1 ms.
+2015-03-06 20:40:50 INFO  MatrixMultiplay:43 - Multiplication of matrixes lasted 0 ms.
+2015-03-11 17:47:41 INFO  WriterMatrix:60 - Recording of the file lasted 17 ms.
+2015-03-14 21:57:14 INFO  IO_Txt:78 - Recording of the file lasted 25 ms.
+2015-03-14 21:59:37 INFO  IO_Txt:78 - Recording of the file lasted 6 ms.
+2015-03-14 22:00:25 INFO  IO_Txt:78 - Recording of the file lasted 17 ms.
+2015-03-14 22:12:55 INFO  IO_TXT:78 - Recording of the file lasted 5 ms.
+2015-03-14 22:14:07 INFO  IO_TXT:78 - Recording of the file lasted 4 ms.
+2015-03-14 22:16:18 INFO  IO_TXT:78 - Recording of the file lasted 6 ms.
+2015-03-14 22:17:39 INFO  IO_TXT:78 - Recording of the file lasted 9 ms.
+2015-03-14 22:19:18 INFO  IO_TXT:78 - Recording of the file lasted 5 ms.
+2015-03-14 22:22:04 INFO  IO_Serialization:43 - Recording of the file lasted 56 ms.
+2015-03-14 22:29:09 INFO  IO_Serialization:43 - Recording of the file lasted 60 ms.
+2015-03-14 22:33:55 INFO  IO_Serialization:42 - Recording of the file lasted 116 ms.
