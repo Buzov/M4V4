@@ -1,5 +1,6 @@
 package matrix;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -254,8 +255,16 @@ public abstract class MatrixAbstract implements MatrixInterface, Cloneable {
         }
     }
 
-    public void write(String path, IO_Interface io) {
+    public void write(String path, IO_Interface io) throws IOException {
         io.write(path, this);
+    }
+
+    public void write(String path, String fileName, IO_Interface io) throws IOException {
+        io.write(path, this);
+    }
+
+    public void setClipboard() {
+
     }
 
 }

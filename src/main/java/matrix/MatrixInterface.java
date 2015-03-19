@@ -2,6 +2,8 @@ package matrix;
 
 import matrix.exceptions.MatrixIndexOutOfBoundsException;
 import matrix.io.IO_Interface;
+
+import java.io.IOException;
 import java.io.Serializable;
 
 public interface MatrixInterface extends Serializable {
@@ -40,9 +42,13 @@ public interface MatrixInterface extends Serializable {
 
     double getDeterminant();
 
-    void read(String path, IO_Interface io);
+    void read(String path, IO_Interface io) throws IOException;
 
-    void write(String path, IO_Interface io);
+    void write(String path, IO_Interface io) throws IOException;
+
+    void write(String path, String fileName, IO_Interface io) throws IOException;
+
+    void setClipboard();
 
 
 

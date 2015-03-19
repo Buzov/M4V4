@@ -10,7 +10,7 @@ import java.util.Scanner;
 /**
  * Created by artur on 14.03.15.
  */
-public class IO_Txt implements IO_Interface {
+public class IO_Txt extends IO_Abstract {
 
     private static final Logger log = Logger.getLogger(IO_Txt.class);
 
@@ -41,7 +41,14 @@ public class IO_Txt implements IO_Interface {
 
 
     @Override
-    public void write(String path, MatrixInterface matrix) {
+    public void write(String path, MatrixInterface matrix) throws IOException {
+        write(path, generateName("txt"), matrix);
+    }
+
+    @Override
+    public void write(String path, String fileName, MatrixInterface matrix) throws IOException {
+        checkPath(path);
+
         int rows = matrix.getAmountOfRows();
         int cols = matrix.getAmountOfCols();
 
@@ -50,7 +57,7 @@ public class IO_Txt implements IO_Interface {
         long startTime = System.currentTimeMillis();
 
         try/*(BufferedWriter buffer = new BufferedWriter(new FileWriter(path)))*/ {
-            buffer = new BufferedWriter(new FileWriter(path));
+            buffer = new BufferedWriter(new FileWriter(path + fileName));
             buffer.write(rows + " " + cols + "\r\n");
             for (int i = 0; i < rows; i++) {
                 for (int j = 0; j < cols; j++) {

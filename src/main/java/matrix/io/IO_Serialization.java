@@ -42,4 +42,9 @@ public class IO_Serialization implements IO_Interface {
 
         log.info("Recording of the file lasted " + time + " ms.");
     }
+
+    @Override
+    public void write(String path, String fileName, MatrixInterface matrix) throws IOException {
+
+    }
 }
