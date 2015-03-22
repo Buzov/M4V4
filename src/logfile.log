@@ -31,3 +31,6 @@
 2015-03-19 00:53:56 INFO  IO_Txt:82 - Recording of the file lasted 7 ms.
 2015-03-19 00:53:59 INFO  IO_Txt:82 - Recording of the file lasted 19 ms.
 2015-03-19 00:54:02 INFO  IO_Txt:82 - Recording of the file lasted 9 ms.
+2015-03-21 16:17:36 INFO  MatrixMultiplay:43 - Multiplication of matrixes lasted 5 ms.
+2015-03-21 16:18:08 INFO  MatrixMultiplay:43 - Multiplication of matrixes lasted 1 ms.
+2015-03-21 16:18:17 INFO  IO_Txt:82 - Recording of the file lasted 6 ms.
