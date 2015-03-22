@@ -1,5 +1,10 @@
 package matrix;
 
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.ClipboardOwner;
+import java.awt.datatransfer.StringSelection;
+import java.awt.datatransfer.Transferable;
 import java.io.IOException;
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -7,7 +12,7 @@ import java.math.BigDecimal;
 import matrix.exceptions.MatrixIndexOutOfBoundsException;
 import matrix.io.IO_Interface;
 
-public abstract class MatrixAbstract implements MatrixInterface, Cloneable {
+public abstract class MatrixAbstract implements MatrixInterface, Cloneable, ClipboardOwner {
 
 	protected int rows = 0;
 	protected int cols = 0;
@@ -93,8 +98,25 @@ public abstract class MatrixAbstract implements MatrixInterface, Cloneable {
 		}
 	}
 
+    public String toStringForBuffer() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                try {
+                    stringBuilder.append(getValue(i, j));
+                } catch (MatrixIndexOutOfBoundsException e) {
+                    System.out.println(e);
+                }
+                stringBuilder.append("\t");
+            }
+            stringBuilder.append("\r\n");
+        }
+        return stringBuilder.toString();
+    }
+
+
 	@Override
-	public String toString() {
+	public String toStringSlow() {
 		String s = "";
 		long startTime = System.currentTimeMillis();
 		for (int i = 0; i < rows; i++) {
@@ -109,13 +131,12 @@ public abstract class MatrixAbstract implements MatrixInterface, Cloneable {
 		}
 		long endTime = System.currentTimeMillis();
 		long time = endTime - startTime;
-		System.out
-				.println("Multiplication of matrixes lasted " + time + " ms.");
+		System.out.println("Multiplication of matrixes lasted " + time + " ms.");
 		return s;
 	}
 
 	@Override
-	public String toStringSlow() {
+	public String toString() {
 		long startTime = System.currentTimeMillis();
 		StringBuilder stringBuilder = new StringBuilder();
 		for (int i = 0; i < rows; i++) {
@@ -131,8 +152,7 @@ public abstract class MatrixAbstract implements MatrixInterface, Cloneable {
 		}
 		long endTime = System.currentTimeMillis();
 		long time = endTime - startTime;
-		System.out
-				.println("Multiplication of matrixes lasted " + time + " ms.");
+		System.out.println("Multiplication of matrixes lasted " + time + " ms.");
 		return stringBuilder.toString();
 
 	}
@@ -253,6 +273,17 @@ public abstract class MatrixAbstract implements MatrixInterface, Cloneable {
                 }
             }
         }
+    }
+
+    public void writeInTheBuffer() {
+        StringSelection stringSelection = new StringSelection(toStringForBuffer());
+        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+        clipboard.setContents(stringSelection, this);
+    }
+
+    @Override
+    public void lostOwnership(Clipboard clipboard, Transferable contents) {
+
     }
 
     public void write(String path, IO_Interface io) throws IOException {

@@ -16,6 +16,7 @@ public class Test {
         matrix.setAmountOfRows(10);
         matrix.setAmountOfCols(10);
         matrix.initialize();
+        matrix.writeInTheBuffer();
         matrix.write(path, new IO_Txt());
         MatrixInterface matrixB = new MatrixDouble();
         matrixB.read(path, new IO_Txt());

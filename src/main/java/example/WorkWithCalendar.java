@@ -1,11 +1,11 @@
-package matrix;
+package example;
 
 import java.util.Calendar;
 
 /**
  * Created by artur on 19.03.15.
  */
-public class Test2 {
+public class WorkWithCalendar {
     public static void main(String[] args) {
         Calendar calendar = Calendar.getInstance();
 

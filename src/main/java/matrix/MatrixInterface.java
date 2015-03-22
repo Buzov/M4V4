@@ -44,15 +44,13 @@ public interface MatrixInterface extends Serializable {
 
     void read(String path, IO_Interface io) throws IOException;
 
+    void writeInTheBuffer();
+
     void write(String path, IO_Interface io) throws IOException;
 
     void write(String path, String fileName, IO_Interface io) throws IOException;
 
     void setClipboard();
-
-
-
-
 
     //@Override
 	//MatrixInterface clone() throws CloneNotSupportedException;
